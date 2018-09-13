@@ -1,0 +1,4 @@
+ImageID,Source,LabelName,Confidence,XMin,XMax,YMin,YMax,IsOccluded,IsTruncated,IsGroupOf,IsDepiction,IsInside
+000026e7ee790135,freeform,chenar,1,0.071905,0.145346,0.206591,0.391306,0,1,1,0,0
+000026e7ee790998,freeform,chenar,1,0.071905,0.145346,0.206591,0.391306,0,1,1,0,0
+000026e7ee790998,freeform,toot,1,0.071905,0.145346,0.206591,0.391306,0,1,1,0,0
