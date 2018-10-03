@@ -1,4 +1,4 @@
-# Training
+# Training (python 2.7)
 
 The following steps needs to be taken to train "faster_rcnn_inception_resnet_v2_atrous_oid" model on a new dataset. The new dataset here is the "test" dataset downloaded from the Open Image Dataset (OID).
 
@@ -58,7 +58,7 @@ This model is a pretrained faster rcnn model which is pretrained on OID. Downloa
 As mentioned in here: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md the model may not be compatible with other versions of TF. Hence, it needs to update by steps described in here: 
 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md
 
-Shortcut
+Sample Code
 ~~~
 # From tensorflow/models/research/
 INPUT_TYPE=image_tensor \
@@ -79,8 +79,42 @@ The config file for the model must be modified in order for the model to run and
 
 Make sure the config file is correctly modified for either running on cloud or your local machine. Once modified the config file, place the file in the "Configs" or "Configs/Cloud" folder depending on your training machine (cloud or local)
 
+### Start Training
 
+#### Running on cloud
 
+After uploading all the required filed on the google bucket storage on cloud, the training can be started.
+
+Sample code
+~~~
+gcloud ml-engine jobs submit training `whoami`_tree_train_`date +%m_%d_%Y_%H_%M_%S` \
+    --runtime-version 1.9 \
+    --job-dir=gs://sampletreetrain/model_dir \
+    --packages dist/object_detection-0.1.tar.gz,slim/dist/slim-0.1.tar.gz,/tmp/pycocotools/pycocotools-2.0.tar.gz \
+    --module-name object_detection.model_main \
+    --region us-central1 \
+    --config object_detection/samples/cloud/cloud.yml \
+    -- \
+    --model_dir=gs://sampletreetrain/model_dir \
+    --pipeline_config_path=gs://sampletreetrain/data/faster_rcnn_inception_resnet_v2_atrous_oid_test.config
+~~~
+
+#### Running locally
+
+Sample Code
+~~~
+PIPELINE_CONFIG_PATH=/home/arman/Desktop/Trial/Configs/faster_rcnn_inception_resnet_v2_atrous_oid_test.config \
+MODEL_DIR=/home/arman/Desktop/Trial/Saved_Models \
+NUM_TRAIN_STEPS=100 \
+NUM_EVAL_STEPS=10
+
+python object_detection/model_main.py \
+    --pipeline_config_path=${PIPELINE_CONFIG_PATH} \
+    --model_dir=${MODEL_DIR} \
+    --num_train_steps=${NUM_TRAIN_STEPS} \
+    --num_eval_steps=${NUM_EVAL_STEPS} \
+    --alsologtostderr
+~~~
 
 
 
