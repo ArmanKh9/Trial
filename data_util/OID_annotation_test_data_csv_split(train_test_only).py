@@ -7,6 +7,7 @@ This creates the following csv files from the original annotation csv data file:
 
 import pandas as pd
 
+# user needs to define the followings
 fraction_of_data_train = 0.8
 train_annotation_output_name = 'OID_annotation_tree_train.csv'
 test_annotation_output_name = 'OID_annotation_tree_test.csv'

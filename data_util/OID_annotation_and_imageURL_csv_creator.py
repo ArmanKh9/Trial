@@ -1,6 +1,7 @@
 import pandas as pd
 import urllib.request
 
+# user needs to define the followings
 annotation_output_name = 'OID_annotation_label_tree_test.csv'
 url_output_name = 'OID_url_label_tree_test.csv'
 desired_label = '/m/07j7r'
