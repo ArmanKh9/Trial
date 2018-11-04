@@ -14,6 +14,7 @@ Three images that are fed to each of the main branch shall be of the same object
 ![siamese concept](https://github.com/ArmanKh9/Trial/blob/master/Tasks/siamese_concept.jpg)
 
 
+
 ### Creating a training database for model training
 
 Database must consist of similar images to those that the model will use for classification. The training data must have some detailed info such as specy. These detailed info must be determined later.
