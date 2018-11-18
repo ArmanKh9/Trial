@@ -19,6 +19,10 @@ Three images that are fed to each of the main branch shall be of the same object
 
 Database must consist of similar images to those that the model will use for classification. The training data must have some detailed info such as specy. These detailed info must be determined later.
 
+# Shelving
+The work needs to be done through a kickstarter fund raise. The kickstarter money raise period is between 30 to 60 days. Many things need to be done before the fund raising period like video, company setup, bank account setup, tax arrangements, cost estimate and team setup. Also, it is very mportant to pursuade friends and family members to invest on your idea first for the kickstarter to pick up. 
+Moreover, the fund raising period is probably the most busy time. The 30-60 days period is a 16 hours/day work period. In this period, you will need to answer tond of questions from kickstarter backers. This requires taking off work for a month at least. In case enough fund was raised, it will be new full time job.
+
 
 
 
